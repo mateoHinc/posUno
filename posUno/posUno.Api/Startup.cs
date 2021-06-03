@@ -30,6 +30,8 @@ namespace posUno.Api
             {
                 cfg.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            services.AddTransient<SeeDb>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
