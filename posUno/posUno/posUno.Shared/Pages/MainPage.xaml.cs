@@ -30,7 +30,8 @@ namespace posUno.Pages
         {
             base.OnNavigatedTo(e);
             User = (User)e.Parameter;
-            welcomeTextBlock.Text = $"Bienvenido: {User.FullName}";
+            welcomeTextBlock.Text = $"Bienvenid@: {User.FullName}";
+            MyFrame.Navigate(typeof(CustomersPage));
         }
 
         private async void LogoutImage_Tapped(object sender, TappedRoutedEventArgs e)
@@ -54,6 +55,16 @@ namespace posUno.Pages
 
             return await confirmDialog.ShowAsync();
 
+        }
+
+        private void CustomersNavigationViewItem_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            MyFrame.Navigate(typeof(CustomersPage));
+        }
+
+        private void ProductsNavigationViewItem_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            MyFrame.Navigate(typeof(ProductsPage));
         }
     }
 }
